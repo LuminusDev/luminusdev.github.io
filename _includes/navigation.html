@@ -1,0 +1,35 @@
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-heart-o"></i>  {{ site.title }}
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    {% assign sorted_pages = site.html_pages | sort:"order" %}
+                    {% for p in sorted_pages %}
+                    {% unless p.url == "/index.html" or p.url == "/" or p.url == "/404.html" %}
+                    {% capture absolute %}{% if page.url != "/index.html" and page.url != "/"  %}/{% endif %}{% endcapture %}
+                    <li>
+                        <a class="page-scroll" href="{{ absolute }}#{{ p.title }}">{{ p.title }}</a>
+                    </li>
+                    {% endunless %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>

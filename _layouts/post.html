@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+	{% include head.html %}
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+	{% include navigation.html %}
+  
+    <!-- {{ page.title }} Section -->
+    <section id="{{ page.title }}" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-12">
+              <div class="post-main-image">
+                  <img class="img-responsive" src="{{ site.baseurl }}/{% if page.image %}{{ page.image }}{% else %}{{site.career-img}}{% endif %}" alt="">
+              </div>
+                <div class="post-heading">
+                    <h4>{{ page.title }}</h4>
+                    <h2 class="subheading">{{ page.subtitle }}</h4>
+                </div>
+                <div class="post-body">
+                    {{ page.content }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+	{% include footer.html %}
+	{% include js.html %}
+
+</body>
+</html>
