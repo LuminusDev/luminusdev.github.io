@@ -18,10 +18,10 @@
                         <a href="#page-top"></a>
                     </li>
 
-                    {% assign sorted_pages = site.html_pages | sort:"order" %}
+                    {% assign sorted_pages = site.html_pages | where:"lang", lang | sort:"order" %}
                     {% for p in sorted_pages %}
                     {% unless p.url == "/index.html" or p.url == "/" or p.url == "/404.html" %}
-                    {% capture absolute %}{% if page.url != "/fr/" and page.url != "/ru/"  %}/{% endif %}{% endcapture %}
+                    {% capture absolute %}{% if page.url != "/fr/" and page.url != "/ru/"  %}/{{ lang }}/{% endif %}{% endcapture %}
                     <li>
                         <a class="page-scroll" href="{{ absolute }}#{{ p.title }}">{{ p.title }}</a>
                     </li>
@@ -31,7 +31,10 @@
                     {% assign languages=site.languages %}
                     {% for language in languages %}
                     <li>
-                        <a href="/{{ language }}/{{ page.ref }}">{{ language }}</a>
+                        <a href="/{{ language }}/{{ page.ref }}">
+                            <img class="img-responsive navbar-icon"
+                                src="{{ site.baseurl }}/img/{{ language }}.svg" alt="">
+                        </a>
                     </li>
                     {% endfor %}
                 </ul>

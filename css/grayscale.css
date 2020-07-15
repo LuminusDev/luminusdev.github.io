@@ -401,6 +401,10 @@ body {
     font-size: 14px;
 }
 
+.navbar-icon {
+    width: 20px;
+}
+
 .post-main-image > .img-responsive {
     margin: auto;
 }

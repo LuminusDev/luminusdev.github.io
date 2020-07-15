@@ -1,7 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-{% capture site_lang %}{{ site.lang | default: "fr" }}{% endcapture %}
-{% capture lang %}{% if page.lang != site_lang %}{{ page.lang }}{% else %}{{ site_lang }}{% endif %}{% endcapture %}
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ site.lang }}" lang="{{ site.lang }}">
+{% capture lang %}{% if page.lang != site.lang %}{{ page.lang }}{% else %}{{ site.lang }}{% endif %}{% endcapture %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ lang }}" lang="{{ lang }}">
 
 	{% include head.html %}
 
@@ -10,7 +9,7 @@
 	{% include navigation.html %}
 	{% include header.html %}
 
-  {% assign sorted_pages = site.html_pages | sort:"order" %}
+  {% assign sorted_pages = site.html_pages | where:"lang", lang | sort:"order" %}
   {% for page in sorted_pages %}
     {% if page.section-type == "default" %}
       <!-- {{ page.title }} Section -->
