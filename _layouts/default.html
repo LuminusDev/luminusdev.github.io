@@ -1,5 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+{% capture site_lang %}{{ site.lang | default: "fr" }}{% endcapture %}
+{% capture lang %}{% if page.lang != site_lang %}{{ page.lang }}{% else %}{{ site_lang }}{% endif %}{% endcapture %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ site.lang }}" lang="{{ site.lang }}">
 
 	{% include head.html %}
 
@@ -46,7 +48,8 @@
               <div class="col-lg-12">
                 {{ page.content | markdownify }}
                 <ul class="timeline">
-                {% for post in site.posts %}
+                {% assign posts = site.posts | where:"lang", lang %}
+                {% for post in posts %}
                   {% assign loopindex = forloop.index | modulo: 2 %}
                   {% capture class %}
                     {% if loopindex == 0 %}

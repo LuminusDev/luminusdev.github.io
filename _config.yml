@@ -27,10 +27,13 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://luminusdev.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: LuminusDev
 
+lang: fr 
+languages: ["fr", "ru"] 
 
 collections:
   posts:
-    permalink: ":title"
+    output: true
+    permalink: "/:categories/:title"
 
 # Build settings
 # theme: minima

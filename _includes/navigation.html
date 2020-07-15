@@ -21,11 +21,18 @@
                     {% assign sorted_pages = site.html_pages | sort:"order" %}
                     {% for p in sorted_pages %}
                     {% unless p.url == "/index.html" or p.url == "/" or p.url == "/404.html" %}
-                    {% capture absolute %}{% if page.url != "/index.html" and page.url != "/"  %}/{% endif %}{% endcapture %}
+                    {% capture absolute %}{% if page.url != "/fr/" and page.url != "/ru/"  %}/{% endif %}{% endcapture %}
                     <li>
                         <a class="page-scroll" href="{{ absolute }}#{{ p.title }}">{{ p.title }}</a>
                     </li>
                     {% endunless %}
+                    {% endfor %}
+
+                    {% assign languages=site.languages %}
+                    {% for language in languages %}
+                    <li>
+                        <a href="/{{ language }}/{{ page.ref }}">{{ language }}</a>
+                    </li>
                     {% endfor %}
                 </ul>
             </div>
