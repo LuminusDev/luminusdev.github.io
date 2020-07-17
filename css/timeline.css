@@ -117,6 +117,14 @@
     height: 65px;
 }
 
+.timeline .timeline-heading-date {
+    font-size: 14px;
+}
+
+.timeline .timeline-heading-date i {
+    margin-right: 6px;
+}
+
 @media(min-width:768px) {
     .timeline:before {
         left: 50%;
@@ -155,6 +163,18 @@
 
     .timeline .timeline-img-responsive {
         height: 85px;
+    }
+
+    .timeline .timeline-heading-date i {
+        float: right;
+        margin-left: 6px;
+        margin-right: 0px;
+    }
+
+    .timeline>li.timeline-inverted .timeline-heading-date i {
+        float: none;
+        margin-left: 0px;
+        margin-right: 6px;
     }
 }
 

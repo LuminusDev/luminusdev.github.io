@@ -23,7 +23,7 @@
                     {% unless p.url == "/index.html" or p.url == "/" or p.url == "/404.html" %}
                     {% capture absolute %}{% if page.url != "/fr/" and page.url != "/ru/"  %}/{{ lang }}/{% endif %}{% endcapture %}
                     <li>
-                        <a class="page-scroll" href="{{ absolute }}#{{ p.title }}">{{ p.title }}</a>
+                        <a class="page-scroll" href="{{ absolute }}#{{ p.slug }}">{{ p.title }}</a>
                     </li>
                     {% endunless %}
                     {% endfor %}

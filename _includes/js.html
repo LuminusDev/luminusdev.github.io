@@ -9,3 +9,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{{ site.baseurl }}/js/grayscale.js"></script>
+
+    <!-- LightGallery in case of post -->
+    {%if page.layout == "post" %}
+    <script src="{{ site.baseurl }}/js/lightgallery.min.js"></script>
+    {% endif %}

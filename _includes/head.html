@@ -17,6 +17,12 @@
     <link href="{{ site.baseurl }}/css/grayscale.css" rel="stylesheet">
     <link href="{{ site.baseurl }}/css/timeline.css" rel="stylesheet">
 
+    <!-- LightGallery in case of post -->
+    {%if page.layout == "post" %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/lightgallery.min.css">
+    {% endif %}
+    <script src="{{ site.baseurl }}/js/jquery.js"></script>
+
     <!-- Custom Fonts -->
     <link href="{{ site.baseurl }}/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">

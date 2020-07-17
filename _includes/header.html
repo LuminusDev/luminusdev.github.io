@@ -6,8 +6,8 @@
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">&nbsp;</h1>
                         <p class="intro-text">{{ content }}</p>
-                        {% capture title %}{% for page in site.pages | sort: "title" %}{% if forloop.first %}{{ page.title }}{% endif %}{% endfor %}{% endcapture %}
-                        <a href="#About" class="btn btn-circle page-scroll">
+                        {% capture slug %}{% assign sorted_pages = site.html_pages | where:"lang", lang | sort:"order" %}{% for page in sorted_pages%}{% if page.order == 1 %}{{ page.slug }}{% endif %}{% endfor %}{% endcapture %}
+                        <a href="#{{ slug }}" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
                     </div>

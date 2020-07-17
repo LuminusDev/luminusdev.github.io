@@ -13,7 +13,7 @@
   {% for page in sorted_pages %}
     {% if page.section-type == "default" %}
       <!-- {{ page.title }} Section -->
-      <section id="{{ page.title }}" style="background-color: #fffcf1" class="content-section text-center">
+      <section id="{{ page.slug }}" style="background-color: #fffcf1" class="content-section text-center">
         <div class="container">
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
@@ -24,13 +24,13 @@
       </section>
     {% elsif page.section-type == "contact" %}
       <!-- {{ page.title }} Section -->
-      <section id="{{ page.title }}" class="container content-section text-center">
+      <section id="{{ page.slug }}" class="container content-section text-center">
           <div class="row">
               <div class="col-lg-8 col-lg-offset-2">
                 {{ page.content | markdownify }}
 
-                {% if page.email %}
-                <p><a href="mailto:{{ page.email }}">{{ page.email }}</a></p>
+                {% if site.email %}
+                <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
                 {% endif %}
                 <ul class="list-inline social-buttons">
                     {% for network in page.social %}
@@ -42,7 +42,7 @@
       </section>
     {% elsif page.section-type == "timeline" %}
       <!-- {{ page.title }} Section -->
-      <section id="{{ page.title }}" class="container content-section text-center">
+      <section id="{{ page.slug }}" class="container content-section text-center">
           <div class="row">
               <div class="col-lg-12">
                 {{ page.content | markdownify }}
@@ -59,13 +59,13 @@
                   <li id="{{ post.id }}" class="{{ class }}">
                       <a href="{{ post.url }}">
                         <div class="timeline-image">
-                          <img class="img-circle timeline-img-responsive" src="{{ site.baseurl }}/{% if post.image %}{{ post.image }}{% else %}{{site.career-img}}{% endif %}" alt="">
+                          <img class="img-circle timeline-img-responsive" loading="lazy" src="{{ site.baseurl }}/{% if post.image %}{{ post.image }}{% else %}{{site.timeline_img_default}}{% endif %}" alt="">
                         </div>
                       </a>
                       <div class="timeline-panel">
                           <div class="timeline-heading">
-                              <h4>{{ post.title }}</h4>
-                              <h4 class="subheading">{{ post.subtitle }}</h4>
+                              <h4 class="timeline-heading-date"><i class="fa fa-calendar"></i>{{ post.dateshow }}</h4>
+                              <h4 class="subheading">{{ post.title }}</h4>
                           </div>
                           <div class="timeline-body">
                               <p class="text-muted">{{ post.timelinetext }}</p>
@@ -77,7 +77,7 @@
 
                   <li class="timeline-inverted">
                     <div class="timeline-image">
-                      <img class="img-circle img-responsive" src="{{ site.baseurl }}/{{ site.career-img }}" alt="">
+                      <img class="img-circle img-responsive" src="{{ site.baseurl }}/{{ site.timeline_img_default }}" alt="">
                     </div>
                   </li>
    
