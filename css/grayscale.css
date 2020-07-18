@@ -95,7 +95,7 @@ a:focus {
 }
 
 .navbar-custom .nav li.active {
-    outline: nonte;
+    outline: none;
     background-color: rgba(255,255,255,.3);
 }
 
@@ -103,6 +103,11 @@ a:focus {
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
+    text-align: right;
+}
+
+.navbar-custom .switch-language {
+    float: right;
 }
 
 .navbar-custom .nav li a:hover,
@@ -167,7 +172,7 @@ a:focus {
 }
 
 .intro .intro-body .intro-text {
-    font-size: 18px;
+    font-size: 3rem;
 }
 
 @media(min-width:767px) {

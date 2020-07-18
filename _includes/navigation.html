@@ -31,7 +31,7 @@
                     {% assign languages=site.languages %}
                     {% for language in languages %}
                     <li>
-                        <a href="/{{ language }}/{{ page.ref }}">
+                        <a class="switch-language" href="/{{ language }}/{{ page.ref }}">
                             <img class="img-responsive navbar-icon"
                                 src="{{ site.baseurl }}/img/{{ language }}.svg" alt="">
                         </a>
