@@ -22,9 +22,11 @@
             <div class="post-main-image">
                 <div class="post-heading">
                     <h2>{{ page.title }}</h4>
-                    <h4>{{ page.dateshow }}</h4>
+                    <h5>{{ page.dateshow }}</h4>
                 </div>
-                <img class="img-responsive" src="{{ site.baseurl }}/{% if page.image %}{{ page.image }}{% else %}{{site.career-img}}{% endif %}" alt="">
+                <p>
+                    <img class="img-responsive" src="{{ site.baseurl }}/{% if page.image %}{{ page.image }}{% else %}{{site.career-img}}{% endif %}" alt="">
+                </p>
             </div>
             <div class="col-lg-12">
                 <div class="post-body">
