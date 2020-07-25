@@ -19,15 +19,22 @@
 
     <!-- LightGallery in case of post -->
     {%if page.layout == "post" %}
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/photoswipe.min.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/photoswipe-default-skin.css">
+    <link rel="preload" href="{{ site.baseurl }}/css/photoswipe.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ site.baseurl }}/css/photoswipe.min.css"></noscript>
+    <link rel="preload" href="{{ site.baseurl }}/css/photoswipe-default-skin.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ site.baseurl }}/css/photoswipe-default-skin.css"></noscript>
+    
     {% endif %}
 
     <!-- Custom Fonts -->
-    <link href="{{ site.baseurl }}/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preload" href="{{ site.baseurl }}/font-awesome/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ site.baseurl }}/font-awesome/css/font-awesome.min.css"></noscript>
+    <link rel="preload" href="//fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
+    <link rel="preload" href="//fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"></noscript>
+    <link rel="preload" href="//fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap"></noscript>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,5 +42,11 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta property="og:description" content="{% if page.timelinetext %}{{ page.timelinetext }}{% else %}{{ site.description }}{% endif %}" />
+    <meta property="og:image" content="{{ site.url }}/{% if page.image %}{{ page.image }}{% else %}img/ceremonie-1.webp{% endif %}" />
 
 </head>

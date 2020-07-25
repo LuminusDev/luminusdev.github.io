@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 {% capture lang %}{% if page.lang != site.lang %}{{ page.lang }}{% else %}{{ site.lang }}{% endif %}{% endcapture %}
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ lang }}" lang="{{ lang }}">
 
@@ -19,9 +19,7 @@
             <div class="col-lg-8 col-lg-offset-2">
               <h2 id="{{ page.title }}">{{ page.title }}</h2>
               <div class="about-image">
-                <img class="img-circle about-img-responsive" loading="lazy"
-                  src="{{ site.baseurl }}/{% if post.image %}{{ post.image }}{% else %}{{site.timeline_img_default}}{% endif %}"
-                  alt="">
+                <img class="img-circle about-img-responsive" loading="lazy" src="{{ site.baseurl }}/img/us.webp" alt="Angelina and Kevin kissing">
               </div>
               {{ page.content | markdownify }}
             </div>
@@ -65,13 +63,13 @@
                   <li id="{{ post.id }}" class="{{ class }}">
                       <a href="{{ post.url }}">
                         <div class="timeline-image">
-                          <img class="img-circle timeline-img-responsive" loading="lazy" src="{{ site.baseurl }}/{% if post.image %}{{ post.image }}{% else %}{{site.timeline_img_default}}{% endif %}" alt="">
+                          <img class="timeline-img-responsive" loading="lazy" src="{{ site.baseurl }}/{% if post.image %}{{ post.image }}{% else %}{{site.timeline_img_default}}{% endif %}" alt="">
                         </div>
                       </a>
                       <div class="timeline-panel">
                           <div class="timeline-heading">
-                              <h4 class="timeline-heading-date"><i class="fa fa-calendar"></i>{{ post.dateshow }}</h4>
-                              <h4 class="subheading">{{ post.title }}</h4>
+                              <div class="timeline-heading-date"><i class="fa fa-calendar"></i>{{ post.dateshow }}</div>
+                              <h3 class="subheading"><a href="{{ post.url }}">{{ post.title }}</a></h3>
                           </div>
                           <div class="timeline-body">
                               <p class="text-muted">{{ post.timelinetext }}</p>

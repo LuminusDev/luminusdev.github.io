@@ -153,7 +153,7 @@ a:focus {
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    background: url(../img/ceremonie-1.jpg) no-repeat bottom center scroll;
+    background: url(../img/ceremonie-1.webp) no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -294,7 +294,6 @@ a:focus {
     }
 
     .post-main-image .img-responsive {
-        /* max-height: 400px; */
         transform: translateY(-30%);
     }
 
@@ -419,6 +418,7 @@ body {
 .post-main-image {
     position: relative;
     margin-bottom: 100px;
+    max-height: 400px;
 }
 
 .post-main-image .img-responsive {
@@ -453,14 +453,14 @@ body {
 }
 
 .post-heading > h2 {
-    font-size: 38px;
+    font-size: 30px;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     padding: 50px 30px;
     background: #c2b79999;
 }
 
-.post-heading > h5 {
+.post-heading > h3 {
     font-size: 16px;
     font-weight: 400;
     padding: 10px;
@@ -473,6 +473,10 @@ body {
     .post-heading {
         max-width: 40%;
         right: initial;
+    }
+
+    .post-heading > h2 {
+        font-size: 38px;
     }
 }
 
