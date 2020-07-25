@@ -3,7 +3,8 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
     // parse slide data (url, title, size ...) from DOM elements 
     // (children of gallerySelector)
     var parseThumbnailElements = function (el) {
-        var thumbElements = el.childNodes,
+        // var thumbElements = el.childNodes,
+        var thumbElements = Array.prototype.slice.call(el.querySelectorAll('figure')),
             numNodes = thumbElements.length,
             items = [],
             figureEl,

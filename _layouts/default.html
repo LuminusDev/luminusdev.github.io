@@ -11,12 +11,18 @@
 
   {% assign sorted_pages = site.html_pages | where:"lang", lang | sort:"order" %}
   {% for page in sorted_pages %}
-    {% if page.section-type == "default" %}
+    {% if page.section-type == "about" %}
       <!-- {{ page.title }} Section -->
       <section id="{{ page.slug }}" style="background-color: #fffcf1" class="content-section text-center">
         <div class="container">
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
+              <h2 id="{{ page.title }}">{{ page.title }}</h2>
+              <div class="about-image">
+                <img class="img-circle about-img-responsive" loading="lazy"
+                  src="{{ site.baseurl }}/{% if post.image %}{{ post.image }}{% else %}{{site.timeline_img_default}}{% endif %}"
+                  alt="">
+              </div>
               {{ page.content | markdownify }}
             </div>
           </div>
