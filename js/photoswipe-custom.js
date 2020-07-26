@@ -187,6 +187,11 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
 
         // Pass data to PhotoSwipe and initialize it
         gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery.listen('gettingData', function (index, item) {
+            if (document.querySelector("html.webp")) {
+                item.src = item.src.replace('.jpg', '.webp');
+            }
+        });
         gallery.init();
     };
 

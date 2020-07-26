@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% capture lang %}{% if page.lang != site.lang %}{{ page.lang }}{% else %}{{ site.lang }}{% endif %}{% endcapture %}
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ lang }}" lang="{{ lang }}">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ lang }}" lang="{{ lang }}" class="no-js">
 
 	{% include head.html %}
 
@@ -19,7 +19,9 @@
             <div class="col-lg-8 col-lg-offset-2">
               <h2 id="{{ page.title }}">{{ page.title }}</h2>
               <div class="about-image">
-                <img class="img-circle about-img-responsive" loading="lazy" src="{{ site.baseurl }}/img/us.webp" alt="Angelina and Kevin kissing">
+                <noscript class="ns-img" data-url="{{ site.baseurl }}/img/us">
+                  <img class="img-circle about-img-responsive" loading="lazy" src="{{ site.baseurl }}/img/us.jpg" alt="Angelina and Kevin kissing">
+                </noscript>
               </div>
               {{ page.content | markdownify }}
             </div>
@@ -63,7 +65,9 @@
                   <li id="{{ post.id }}" class="{{ class }}">
                       <a href="{{ post.url }}">
                         <div class="timeline-image">
-                          <img class="timeline-img-responsive" loading="lazy" src="{{ site.baseurl }}/{% if post.image %}{{ post.image }}{% else %}{{site.timeline_img_default}}{% endif %}" alt="">
+                          <noscript class="ns-img" data-url="{{ site.baseurl }}/{{ post.image }}">
+                            <img class="timeline-img-responsive" loading="lazy" src="{{ site.baseurl }}/{{ post.image }}.jpg" alt="">
+                          </noscript>
                         </div>
                       </a>
                       <div class="timeline-panel">
@@ -81,7 +85,9 @@
 
                   <li class="timeline-inverted">
                     <div class="timeline-image">
-                      <img class="img-circle img-responsive" src="{{ site.baseurl }}/{{ site.timeline_img_default }}" alt="">
+                      <noscript class="ns-img" data-url="{{ site.baseurl }}/{{ site.timeline_img_default }}">
+                        <img class="img-circle img-responsive" src="{{ site.baseurl }}/{{ site.timeline_img_default }}.jpg" alt="">
+                      </noscript>
                     </div>
                   </li>
    

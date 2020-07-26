@@ -26,7 +26,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://luminusdev.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: LuminusDev
-timeline_img_default: img/timeline/default.webp
+timeline_img_default: img/timeline/default
 
 lang: fr 
 languages: ["fr", "ru"] 

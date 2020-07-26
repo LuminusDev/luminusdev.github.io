@@ -49,4 +49,9 @@
     <meta property="og:description" content="{% if page.timelinetext %}{{ page.timelinetext }}{% else %}{{ site.description }}{% endif %}" />
     <meta property="og:image" content="{{ site.url }}/{% if page.image %}{{ page.image }}{% else %}img/ceremonie-1.webp{% endif %}" />
 
+    <script>
+        document.querySelector("html").classList.add("js");
+        document.querySelector("html").classList.remove("no-js");
+    </script>
+
 </head>

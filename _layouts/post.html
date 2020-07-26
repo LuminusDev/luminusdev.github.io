@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% capture lang %}{% if page.lang != site.lang %}{{ page.lang }}{% else %}{{ site.lang }}{% endif %}{% endcapture %}
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ lang }}" lang="{{ lang }}">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ lang }}" lang="{{ lang }}" class="no-js">
 
     {% include head.html %}
     <!-- Photoswipe -->
@@ -23,7 +23,9 @@
                     <h3>{{ page.dateshow }}</h4>
                 </div>
                 <p>
-                    <img class="img-responsive" src="{{ site.baseurl }}/{% if page.image %}{{ page.image }}{% else %}{{site.career-img}}{% endif %}" alt="">
+                    <noscript class="ns-img" data-url="{{ site.baseurl }}/{{ page.image }}">
+                        <img class="img-responsive" src="{{ site.baseurl }}/{{ page.image }}.jpg" alt="" />
+                    </noscript>
                 </p>
             </div>
             <div class="col-lg-12">

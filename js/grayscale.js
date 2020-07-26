@@ -28,3 +28,18 @@ $(function() {
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+Modernizr.on('webp', function (result) {
+    // Copy attributes from the `<noscript>` to a new `<img>` element
+    var nscript = document.querySelectorAll('.ns-img');
+    nscript.forEach(function (elem) {
+        var img = jQuery(elem.textContent || elem.innerHTML)[0];
+
+        // Set the `src` based on whether WebP is supported
+        var ext = result ? ".webp" : ".jpg";
+        img.src = elem.getAttribute('data-url') + ext;
+
+        // Inject into the DOM in the correct place (after the `<noscript>`)
+        elem.parentNode.insertBefore(img, elem.nextSibling);
+    });
+});
