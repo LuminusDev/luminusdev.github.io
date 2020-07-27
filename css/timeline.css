@@ -255,7 +255,9 @@
     }
 }
 
-.subheading > a {
+.subheading > a,
+.subheading > a:hover {
     color: inherit;
     transition: none;
+    text-decoration: none;
 }
