@@ -605,3 +605,13 @@ label.no-js-navbar-toggle {
     cursor: inherit;
     height: 40px;
 }
+
+.post-section a, .content-section a {
+    text-decoration: underline;
+    color: #FFB300;
+}
+
+.post-section a:hover, .content-section a:hover {
+    text-decoration: underline;
+    color: #FFA000;
+}
