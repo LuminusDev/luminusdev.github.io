@@ -24,7 +24,7 @@ author: LuminusDev
 description: >- # this means to ignore newlines until "baseurl:"
   Wedding site of Angelina and Kevin, from the preparation to the final day.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://howtowedding.fr/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://howtowedding.fr" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: LuminusDev
 timeline_img_default: img/timeline/default
 
