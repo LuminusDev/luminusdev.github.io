@@ -9,7 +9,7 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
     {% assign languages=site.languages %}
     {% for language in languages %}
-    <link rel="alternate" hreflang="fr" href="{{ site.url }}/{{ language }}/{{ page.ref }}" />
+    <link rel="alternate" hreflang="{{ language }}" href="{{ site.url }}/{{ language }}/{{ page.ref }}" />
     {% endfor %}
 
     <title>{{ site.title }} {% if page.title %} | {{ page.title }}{% endif %}</title>
