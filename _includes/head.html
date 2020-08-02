@@ -56,8 +56,8 @@
 
     <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-    <meta property="og:description" content="{% if page.timelinetext %}{{ page.timelinetext }}{% else %}{{ site.data.languages[lang].description }}{% endif %}" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title }}{% endif %}" />
+    <meta property="og:description" content="{% if page.timelinetext %}{{ page.timelinetext | escape }}{% else %}{{ site.data.languages[lang].description | escape }}{% endif %}" />
     <meta property="og:image" content="{{ site.url }}/{% if page.image %}{{ page.image }}{% else %}img/ceremonie-1{% endif %}.jpg" />
 
     <script>
