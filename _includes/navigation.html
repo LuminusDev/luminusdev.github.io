@@ -10,16 +10,23 @@
                 <a class="navbar-brand page-scroll" href="#page-top">
                     <img src="{{  site.baseurl }}/img/wedding.svg"> {{ site.title }}
                 </a>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        {% assign languages=site.languages | sort | reverse %}
+                        {% for language in languages %}
+                        <li class="hidden-large">
+                            <a class="switch-language" href="/{{ language }}/{{ page.ref }}">
+                                <img class="img-responsive navbar-icon" src="{{ site.baseurl }}/img/{{ language }}.svg" alt="">
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-
                     {% assign sorted_pages = site.html_pages | where:"lang", lang | sort:"order" %}
                     {% for p in sorted_pages %}
                     {% unless p.name == "index.html" or p.name == "404.html" %}
@@ -30,12 +37,11 @@
                     {% endunless %}
                     {% endfor %}
 
-                    {% assign languages=site.languages %}
+                    {% assign languages=site.languages | sort %}
                     {% for language in languages %}
-                    <li>
+                    <li class="hidden-small">
                         <a class="switch-language" href="/{{ language }}/{{ page.ref }}">
-                            <img class="img-responsive navbar-icon"
-                                src="{{ site.baseurl }}/img/{{ language }}.svg" alt="">
+                            <img class="img-responsive navbar-icon" src="{{ site.baseurl }}/img/{{ language }}.svg" alt="">
                         </a>
                     </li>
                     {% endfor %}

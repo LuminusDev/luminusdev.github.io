@@ -597,13 +597,18 @@ cite:after {
     text-align: center;
 }
 
-#no-js-navbar-toggle:checked ~ .navbar-main-collapse {
+.no-js #no-js-navbar-toggle:checked ~ .navbar-main-collapse {
     display: block;
     visibility: visible;
 }
 
-label.no-js-navbar-toggle {
+.no-js-navbar-toggle {
+    display: none;
+}
+
+.no-js label.no-js-navbar-toggle {
     position: absolute;
+    display: inline-block;
     top: -1px;
     left: -1px;
     right: -1px;
@@ -620,4 +625,25 @@ label.no-js-navbar-toggle {
 .post-section a:hover, .content-section a:hover {
     text-decoration: underline;
     color: #FFA000;
+}
+
+.hidden-small {
+    display: none !important;
+    visibility: hidden !important;
+}
+.nav>li>a.switch-language {
+    padding: 10px 5px;
+}
+@media(min-width:768px) {
+    .hidden-large {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    .hidden-small {
+        display: inherit !important;
+        visibility: inherit !important;
+    }
+    .nav>li>a.switch-language {
+        padding: 15px;
+    }
 }
