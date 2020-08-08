@@ -9,6 +9,9 @@ fr:
   galleryNext: Suivant
   galleryPrevious: Précédent
   seemore: Voir l'article
+  cookieconsent: Nous utilisons Google Analytics pour connaître le nombre de personnes qui visitent le site. Et c'est tout.
+  cookieconsentok: D'accord
+  cookieconsentno: Pas envie
 ru:
   description: Сайт Ангелины и Кевина, с первых дней планировки нашей свадьбы до долгожданного дня Х. Наши решения, сомнения, подсказки, пройди это с нами.
   galleryShareFacebook: Share on Facebook
@@ -20,3 +23,6 @@ ru:
   galleryNext: Вперед
   galleryPrevious: Назад
   seemore: Читать статью
+  cookieconsent: Мы используем Google Analytics, чтобы знать количество посещений нашего сайта. И это всё.
+  cookieconsentok: Согласен
+  cookieconsentno: Не согласен

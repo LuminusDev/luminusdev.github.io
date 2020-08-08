@@ -28,6 +28,8 @@ url: "https://howtowedding.fr" # the base hostname & protocol for your site, e.g
 twitter_username: LuminusDev
 timeline_img_default: img/timeline/default
 
+gaconfig: UA-174886253-1
+
 lang: fr 
 languages: ["fr", "ru"] 
 
