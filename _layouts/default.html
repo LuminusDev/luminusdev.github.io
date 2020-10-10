@@ -62,29 +62,54 @@
                     {% endif %}
                   {% endcapture %}
 
-                  <li id="{{ post.id }}" class="{{ class }}">
-                      <a href="{{ post.url }}">
-                        <div class="timeline-image">
-                          <noscript class="ns-img" data-url="{{ site.baseurl }}/{{ post.image }}">
-                            <img class="timeline-img-responsive" loading="lazy" src="{{ site.baseurl }}/{{ post.image }}.jpg" alt="">
-                          </noscript>
-                        </div>
-                      </a>
+                  {% if post.event == true %}
+                  <li id="{{ post.id }}" class="timeline-inverted timeline-event">
                       <div class="timeline-panel">
                           <div class="timeline-heading">
-                              <div class="timeline-heading-date"><i class="fa fa-calendar"></i>{{ post.dateshow }}</div>
-                              <h3 class="subheading"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-                          </div>
-                          <div class="timeline-body">
-                              <p class="text-muted">{{ post.timelinetext }}</p>
-                              <p class="see-more"><a href="{{ post.url }}">{{ site.data.languages[lang].seemore }}</a></p>
+                              <div class="timeline-heading-date">Event <i class="fa fa-calendar"></i>{{ post.dateshow }}</div>
+                              <h3 class="subheading">{{ post.title }}</h3>
                           </div>
                       </div>
                   </li>
+                  {% elsif post.current == true %}
+                  <li id="{{ post.id }}" class="{{ class }} timeline-current">
+                    <div class="timeline-image">
+                      <noscript class="ns-img" data-url="{{ site.baseurl }}/{{ post.image }}">
+                        <img class="timeline-img-responsive" loading="lazy" src="{{ site.baseurl }}/{{ post.image }}.jpg" alt="">
+                      </noscript>
+                    </div>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <div class="timeline-heading-date"><i class="fa fa-calendar"></i>{{ post.dateshow }}</div>
+                        <h3 class="subheading">{{ post.title }}</h3>
+                      </div>
+                    </div>
+                  </li>
+                  {% else %}
+                  <li id="{{ post.id }}" class="{{ class }} timeline-post">
+                    <a href="{{ post.url }}">
+                      <div class="timeline-image">
+                        <noscript class="ns-img" data-url="{{ site.baseurl }}/{{ post.image }}">
+                          <img class="timeline-img-responsive" loading="lazy" src="{{ site.baseurl }}/{{ post.image }}.jpg" alt="">
+                        </noscript>
+                      </div>
+                    </a>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <div class="timeline-heading-date">Article <i class="fa fa-calendar"></i>{{ post.dateshow }}</div>
+                        <h3 class="subheading"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                      </div>
+                      <div class="timeline-body">
+                        <p class="text-muted">{{ post.timelinetext }}</p>
+                        <p class="see-more"><a href="{{ post.url }}">{{ site.data.languages[lang].seemore }}</a></p>
+                      </div>
+                    </div>
+                  </li>
+                  {% endif %}
 
                 {% endfor %}
 
-                  <li class="timeline-inverted">
+                  <li class="timeline-inverted timeline-post">
                     <div class="timeline-image">
                       <noscript class="ns-img" data-url="{{ site.baseurl }}/{{ site.timeline_img_default }}">
                         <img class="img-circle img-responsive" src="{{ site.baseurl }}/{{ site.timeline_img_default }}.jpg" alt="">

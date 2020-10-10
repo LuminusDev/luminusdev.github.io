@@ -17,8 +17,12 @@
 
 .timeline>li {
     position: relative;
-    margin-bottom: 50px;
     min-height: 50px;
+    margin-top: 20px;
+}
+
+.timeline>li + .timeline-post {
+    margin-top: 50px;
 }
 
 .timeline>li:before,
@@ -68,6 +72,31 @@
     overflow: hidden;
 }
 
+.timeline>li .timeline-event-image {
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 20px;
+    margin-left: 0;
+    text-align: center;
+    color: #fff;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    top: calc(50% - 20px);
+}
+
+.timeline>li .timeline-event-image:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #f1f1f1;
+    right: -10px;
+}
+
 .timeline>li .timeline-panel .timeline-heading-date {
     font-size: 10px;
     line-height: 10px;
@@ -77,6 +106,17 @@
     float: right;
     padding: 0 20px 0 100px;
     text-align: left;
+}
+
+.timeline>li.timeline-event>.timeline-panel,
+.timeline>li.timeline-inverted.timeline-event>.timeline-panel {
+    padding: 20px;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+}
+
+.timeline-event h3 {
+    margin: 0;
 }
 
 .timeline>li.timeline-inverted>.timeline-panel:before {
@@ -93,8 +133,8 @@
     border-left-width: 0;
 }
 
-.timeline>li:last-child {
-    margin-bottom: 0;
+.timeline>li:first-child {
+    margin-top: 0;
 }
 
 .timeline .timeline-heading h4 {
@@ -135,6 +175,14 @@
     font-size: 18px;
 }
 
+.timeline .timeline-event {
+    color: #767676;
+}
+
+.timeline .timeline-current {
+    color: #FFB300;
+}
+
 @media(min-width:768px) {
     .timeline:before {
         left: 50%;
@@ -168,6 +216,13 @@
         line-height: 13px;
     }
 
+    .timeline>li.timeline-event>.timeline-panel,
+    .timeline>li.timeline-inverted.timeline-event>.timeline-panel {
+        left: 30%;
+        float: none;
+        text-align: center;
+    }
+
     .timeline>li.timeline-inverted>.timeline-panel {
         float: right;
         padding: 0 30px 20px 20px;
@@ -177,12 +232,6 @@
     .timeline .timeline-img-responsive {
         height: 85px;
         width: 85px;
-    }
-
-    .timeline .timeline-heading-date i {
-        float: right;
-        margin-left: 6px;
-        margin-right: 0px;
     }
 
     .timeline>li.timeline-inverted .timeline-heading-date i {
@@ -239,10 +288,6 @@
         width: 170px;
         height: 170px;
         margin-left: -85px;
-    }
-
-    .timeline>li .timeline-panel .timeline-heading-date {
-        margin-top: 40px;
     }
 
     .timeline>li.timeline-inverted>.timeline-panel {
