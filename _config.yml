@@ -39,7 +39,7 @@ collections:
     permalink: "/:categories/:title"
 
 # To transform images into webp :
-# cwebp -q 80 choses-a-faire.jpg -o choses-a-faire.webp 
+# cwebp -q 80 choses-a-faire.jpg -o choses-a-faire.webp
 
 # Build settings
 # theme: minima

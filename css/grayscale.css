@@ -650,3 +650,12 @@ cite:after {
  .post-body h4 {
      color: #FFB300;
  }
+
+ .big-p {
+    font-family: 'Parisienne', cursive;
+    font-size: 7em;
+    display: inline-block;
+    border-top: solid 1px #424242;
+    border-bottom: solid 1px #424242;
+    padding: 10px 5px;
+ }
